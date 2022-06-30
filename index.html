@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #F1EDEA;
+        }
+        p {
+            margin-bottom: 0;
+        }
+        ul {
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        a,a:active ,a:focus, a:visited  {
+            color:initial;
+            text-decoration: none;
+        }
+        li {
+            list-style-type: none;
+        }
+        nav {
+            background-color: #9F7A67;
+            max-width: 1280px;
+            display: flex;
+            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            padding: 0 50px;
+        }
+        h6 {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .nav-logo {
+            width: 150px;
+            height: 50px;
+            background-color: #fff;
+        }
+        .nav-ul {
+            display: flex;
+            align-items: center;
+        }
+        .nav-ul li {
+            color: black;
+            padding-left: 15px;
+        }
+
+        .nav-hamburger {
+            display: none;
+            width: 50px;
+            height: 50px;
+        }
+        .nav-hamburger img {
+            width: 100%;
+            height: 100%;
+        }
+
+        section {
+            max-width: 1280px;
+            margin: auto;
+            padding: 0 50px;
+            
+        }
+        .aboutme_area {
+            padding: 50px;
+        }
+        .aboutme_title {
+            text-align: center;
+        }
+        .aboutme_info {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+        }
+
+        .aboutme_img {
+            display: flex;
+            justify-content: center;
+            width: 40%;
+        }
+        .aboutme_img img {
+            width: 50%;
+            object-fit: contain;
+        }
+        .aboutme_text {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            background-color: rgba(159, 122, 103, 0.7);
+            padding: 15px 15px;
+            border-radius: 15px;
+        }
+        .service {
+            background-color: #9F7A67;
+            padding: 100px 50px;
+        }
+        .service_title {
+            text-align: center;
+        }
+        .service_container {
+            /* padding-top: 30px; */
+            display: flex;
+            justify-content: space-around;
+            position:relative;
+        }
+        .service_card  {
+            background-color: #f1c7b2;
+            width: 25%;
+            padding: 30px 15px;
+            border-radius: 20px;
+            box-shadow: 4px 4px 3px 2px rgb(0 0 0 / 20%);
+            display: flex;
+            flex-direction: column;
+            /* transition: 1.5s; */
+        }
+        .service_detail {
+            text-align: center;
+            margin: 30px auto;
+        }
+        .service_detail > div{
+            position: relative;
+            width: fit-content;
+        }
+        .service_detail .text_bgc {
+            background-color: #fde694;
+            width: 110%;
+            position: absolute;
+            height: 20px;
+            top: 35%;
+            z-index: -2;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        .class_img {
+            width: 100%;
+            text-align: center;
+        }
+        .class_img img {
+            width: 190px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+        .class_point {
+            width:fit-content;
+            margin: auto;
+        }
+        .class_point span {
+            /* font-size: 10px; */
+        }
+
+        .service_price {
+            padding-top: 30px;
+            text-align: center;
+        }
+        .checklist {
+            padding: 15px 0;
+        }
+        .checklist li {
+            display: flex;
+            padding-left: 15%;
+        }
+        .checklist img {
+            flex-grow: 1;
+            padding: 0px;
+            max-width: 20px;
+            height: 20px;
+            min-width:auto;
+            margin-right: 5px;
+        }
+        .slider_area {
+            overflow: hidden;
+            position: relative;
+            width: 40%;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+        }
+        .slider_container {
+            width: 500%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateX(-20%);
+        }
+        .slider {
+            width: 20%;
+            cursor: pointer;
+        }
+        .slider img {
+            padding: 15px 0 15px;
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+        .slider_left, .slider_right {
+            cursor: pointer;
+            width: 35px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+        }
+        .slider_left{
+            left: 10px;
+        }
+        .slider_right{
+            right: 10px;
+        }
+        .slider_area svg {
+            fill: #fff;
+        }
+        .service_lightbox {
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            visibility: hidden;
+            z-index: 3;
+            transition: 1s;
+            opacity: 0;
+        }
+        .service_lightbox_h {
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            visibility: visible;
+            z-index: 3;
+            /* transition: 5s; */
+            opacity: 1;
+        }
+        .service_lightbox span {
+            color: #fff;
+            line-height: 30px;
+            display: inline-block;
+        }
+        .all_img_container {
+            width: 70%;
+            height: 90%;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            /* background-color: black; */
+            z-index: 4;
+            display: none;
+        }
+        .single_img_container {
+            position:absolute;
+            /* background-color: #fff; */
+            width: 70%;
+            height: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .big_img{
+            width: 100%;
+            height: 100%;
+            background-color: #734A12;
+        }
+        .big_img img {
+            width: 100%;
+            height: 70%;
+            max-height: 100%;
+            position: relative;
+            /* z-index: -1; */
+            /* background-color: transparent; */
+        }
+        .single_img {
+            width: 30%;
+            height: 80%;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .single_img img {
+            padding: 0;
+            width: 100%;
+            /* min-width: 270px; */
+            height: 100%;
+            object-fit: fill;
+        }
+        .close {
+            cursor: pointer;
+            position: absolute;
+            z-index: 5;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            width: 5%;
+            height: 7%;
+            right: 1%;
+            top: 3%;
+
+        }
+        .close img {
+            padding: 0;
+            position: absolute;
+            width: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .row_service {
+            background-color: #9F7A67;
+            padding: 100px 50px;
+        }
+        .row_card {
+            padding: 30px 15px;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 4px 4px 3px 2px rgb(0 0 0 / 20%);
+        }
+        .row_card_detail {
+            display: flex;
+            justify-content: space-between;
+        }
+        .row_card_detail p {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .row_card_title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .row_card_con  {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .row_card_area {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 60%;
+        }
+        .row_card_detail img {
+            width: 15px;
+            position: relative;
+            top:50%
+        }
+        .row_card_little {
+            text-align-last: left;
+            display: flex;
+            align-items: center;
+        }
+        .row_card_text {
+            width: 50%;
+            min-width: 255px;
+        }
+
+        .reserve {
+            margin-top: 50px;
+        }
+        .address {
+            display: flex;
+            justify-content: center;
+            margin: 30px;
+        }
+        .question {
+            margin-top: 50px;
+        }
+        .qa_ul li {
+            margin-bottom: 30px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .qa_ul p {
+            transition: .7s;
+            /* border: 1px solid black; */
+            
+        }
+        .grow_0{
+            /* transition: .5s; */
+            height: 0;
+            padding: 0 10px;
+            
+        }
+        .grow {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding:10px 10px;
+            /* transition: .5s; */
+            height: 100px;   
+        }
+        .transportation {
+            padding: 100px;
+        }
+        .transportation h5 {
+            text-align: center;
+        }
+            @media screen and (max-width:1030px) {
+                .service_container {
+                    display: block;
+                }
+                .service_card {
+                    width: 100%;
+                    min-width: 230px;
+                    margin: auto;
+                    margin-bottom: 40px;
+                }
+                .checklist {
+                    padding: 15px 0;
+                    width: 33%;
+                    margin: auto;
+                }
+                .checklist li {
+                    padding: 0;
+                }
+                .slider img {
+                padding: 15px 0 15px;
+                width: 100%;
+                max-height: 300px;
+                object-fit: contain;
+                }
+
+        }
+        @media screen and (max-width:900px) {
+            .row_card_con {
+                flex-direction: column;
+                align-items: center;
+            }
+            .row_card_area {
+                width: 100%;
+            }
+            .row_card_detail {
+                flex-direction: column;
+                align-items: center;
+            }
+            .row_card_text p{
+                margin-bottom: 10px;
+            }
+        }
+        @media screen and (max-width:800px) {
+            .nav-ul {
+                display: none;
+            }
+            .nav-hamburger {
+                display: block;
+                position: relative;
+                padding: 10px;
+            }
+            .hamburger-list {
+                position: absolute;
+                width: 140px;
+                top: 44px;
+                left: -40px;
+                padding: 0px 25px;
+                background-color: #9F7A67;
+                height: 0;
+                overflow: hidden;
+                transition: .7s;
+            }
+            .hamburger-list li {
+                padding: 5px 0;
+            }
+            .hamburger-b {
+                height: 190px;
+                padding: 10px 25px;
+
+            }
+            .hamburger-n {
+
+            }
+            .aboutme_img img {
+                width: 70%;
+                object-fit: contain;
+            }
+            .grow {
+                height: 120px;
+            }
+        }
+        @media screen and (max-width:700px) {
+            .grow {
+                height: 140px;
+            }
+            .service ,.row_service {
+                padding: 30px 25px;
+            }
+        }
+        @media screen and (max-width:600px) {
+            .aboutme_info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .grow {
+                height: 230px;
+            }
+            .aboutme_img {
+                width: 70%;
+            }
+            .aboutme_text {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <!-- <img src="" alt=""> -->
+        </div>
+        <ul class="nav-ul">
+            <a href="aboutme"><li>關於工作室</li></a>
+            <a href="#service"><li>服務項目</li></a>
+            <a href=""><li>預約方式</li></a>
+            <a href=""><li>交通資訊</li></a>
+            <a href=""><li>問與答</li></a>
+        </ul>
+        <div class="nav-hamburger">
+            <img src="./imgs/icon/bars-solid.svg" alt="">
+            <ul class="hamburger-list">
+                <a href="#service"><li>關於我</li></a>
+                <a href=""><li>服務項目</li></a>
+                <a href=""><li>預約方式</li></a>
+                <a href=""><li>交通資訊</li></a>
+                <a href=""><li>問與答</li></a>
+            </ul>
+        </div>
+    </nav>
+    <section class="aboutme_area" id="aboutme">
+        <h5 class="aboutme_title">關於工作室</h5>
+        <div class="aboutme_info">
+            <div class="aboutme_img">
+                <img src="./imgs/4.jpg" alt="">
+            </div>
+            <div class="aboutme_text">
+                <p>說出編號組合大眾討論部分我很先進性互動一家加快，彩色新竹足夠電源理由日誌注意以及我家三人解放進度，讀書先後點點一定技巧語音天堂不錯放棄，公開後面自由面前激情，有什麼，喜愛新人連接我這成為破解家裡對著這麼多，翻譯超市還沒北方自主需求碩士所屬隊伍，民族最快上。</p>
+            </div>
+        </div> 
+    </section>
+    <section class="service" id="service">
+        <p class="service_title"></p>
+        <div class="service_container">
+            <div class="service_card">
+                <div class="class_img">
+                    <img  src="./imgs/5.jpg" alt="">
+                </div>
+                <h5 class="service_detail">
+                    <div>深層保濕水飛梭修護保養
+                        <div class="text_bgc"></div>
+                    </div>
+                </h5>
+                <ul class="class_point">
+                    <li>
+                        <span>軟化粉刺</span>
+                    </li>
+                    <li>
+                        <span>清潔長年粉刺與髒污</span>
+                    </li>
+                    <li>
+                        <span>過程無痛，不傷害毛孔</span>
+                    </li>
+                    <li>
+                        <span>微撥筋搭配深層補水</span>
+                    </li>
+                </ul>
+                <p class="service_price">單堂課程 ＄2000元起</p>
+            </div>
+            <div class="service_card">
+                <div class="class_img" >
+                    <img src="./imgs/6.jpg" alt="">
+                </div>
+                <h5 class="service_detail">
+                    <div>臉部違章建築護理療程
+                        <div class="text_bgc"></div>
+                    </div>
+                    
+                </h5>
+                <ul class="class_point">
+                    <li>
+                        <span>問題肌膚及斑點肌膚修復</span>
+                    </li>
+                    <li>
+                        <span>不電燒不雷射</span>
+                    </li>
+                    <li>
+                        <span>純手工處理您臉上的異物</span>
+                    </li>
+                </ul>
+                <!-- <div class="all_img_container">
+                    <div class="big_img">
+                        <img src="./imgs/alexander-krivitskiy-zle2_jp-AUw-unsplash.jpeg" alt="">
+                    </div>
+                    <div class="single_img_container">
+                        <div class="single_img img1">
+                            <img src="./imgs/alexander-krivitskiy-zle2_jp-AUw-unsplash.jpeg" alt="">
+                        </div>
+                        <div class="single_img img2">
+                            <img src="./imgs/amplitude-magazin-8BMr4l_2hgY-unsplash.jpeg" alt="">
+                        </div>
+                        <div class="single_img img3">
+                            <img src="./imgs/christin-hume-0MoF-Fe0w0A-unsplash.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="close">
+                        <img src="./imgs/icon/xmark-solid.svg" alt="">
+                    </div>
+                </div> -->
+                <p class="service_price">單堂課程 ＄2200元起</p>
+            </div>
+            <div class="service_card">
+                <div class="class_img">
+                    <img  src="./imgs/3.jpg" alt="">
+                </div>
+                <h5 class="service_detail">
+                    <div>水光肌煥顏療程
+                        <div class="text_bgc"></div>
+                    </div>
+                    
+                </h5>
+                <ul class="class_point">
+                    <!-- <li>
+                        <span>蛋殼肌極致回春</span>
+                    </li> -->
+                    <li>
+                        <span>改管毛孔粗大</span>
+                    </li>
+                    <li>
+                        <span>填補臉部凹疤</span>
+                    </li>
+                    <li>
+                        <span>淡化皺紋</span>
+                    </li>
+                    <li>
+                        <span>維持肌膚彈性潤澤</span>
+                    </li>
+                </ul>
+                <p class="service_price">單堂課程 ＄2000元起</p>
+                <p class="service_price">課程搭配保養品 ＄5000元起</p>
+            </div>
+        </div>
+    </section>
+    <section class="row_service">
+        <div class="row_container">
+            <div class="row_card">
+                <h5 class="row_card_title">深層保濕水飛梭修護保養</h5>
+                <div class="row_card_con">
+                    <div class="slider_area">
+                        <div class="slider_container">
+                            <div class="slider">
+                                <img src="./imgs/2.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/S__9519556.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/S__9568267.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/2.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="slider_left">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
+                        </div>
+                        <div class="slider_right">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                        </div>
+                    </div>
+                    <div class="row_card_area">
+                        <div class="row_card_detail">
+                            <div class="row_card_text">
+                                <h6>課程效果</h6>
+                                <div class="vertical">
+                                    <p>✔溫和深層洗卸</p>
+                                    <p>✔獨家水飛梭三段式無痛軟化角質</p>
+                                    <p>✔手工針清頑固粉刺及痘痘</p>
+                                    <p>✔冰鎮保濕超導水保濕面膜</p>
+                                    <p>✔舒緩安敏金縷梅泥膜</p>
+                                    <p>✔高效鎖水舒敏調理保養</p>
+                                </div>
+                            </div>
+                            <div class="row_card_text">
+                                <h6>改善效果</h6>
+                                <p>縮小毛孔、痘痘、黑頭、皮膚角質，過程無痛，不會傷害毛孔，可改善皮膚出油的困擾並且讓肌膚代謝恢復正常，預防毛孔粗大，深層溫和去除毛孔角質與髒污，定期保養肌膚讓皮膚深呼吸，促進肌膚水潤透亮並可幫助居家保養品的吸收。</p>
+                                <p>快速補水+修護,提高皮膚亮度、減少肌膚過敏現象，改善肌膚因水份流失造成的問題，讓肌膚深層保濕平衡補水。</p>
+                            </div>
+                        </div>
+                        <h6>全膚質皆適合，適合每月定期保養的課程。</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row_card">
+                <h5 class="row_card_title">臉部違章建築護理療程</h5>
+                <div class="row_card_con">
+                    <div class="slider_area">
+                        <div class="slider_container">
+                            <div class="slider">
+                                <img src="./imgs/2.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/S__9568267.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/S__9568267.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/2.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="slider_left">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
+                        </div>
+                        <div class="slider_right">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                        </div>
+                    </div>
+                    <div class="row_card_area">
+                        <div class="row_card_detail">
+                            <div class="row_card_text">
+                                <h6>課程內容</h6>
+                                <p><img src="./imgs/icon/angles-right-solid.svg" alt="">溫和深層洗卸</p>
+                                <p><img src="./imgs/icon/angles-right-solid.svg" alt="">獨家水飛梭三段式無痛軟化角質</p>
+                                <p><img src="./imgs/icon/angles-right-solid.svg" alt="">手工針清頑固粉刺及痘痘</p>
+                                <p><img src="./imgs/icon/angles-right-solid.svg" alt="">純手工獨家技術處理臉上違章建築</p>
+                                <p><img src="./imgs/icon/angles-right-solid.svg" alt="">冰鎮保濕超導水保濕面膜</p>
+                                <p><img src="./imgs/icon/angles-right-solid.svg" alt="">高效鎖水舒敏調理保養</p>
+                            </div>
+                            <div class="row_card_text">
+                                <h6>改善效果</h6>
+                                <h6 class="row_card_little"><img src="./imgs/icon/diamond-solid.svg" alt="">斑點問題</h6>
+                                <p>小雀斑/曬斑/老人斑/肝斑/顴骨母斑</p>
+                                <h6 class="row_card_little"><img src="./imgs/icon/diamond-solid.svg" alt="">皮膚問題</h6>
+                                <p>肉芽/肉痣/汗管瘤/粟粒腫/脂肪球</p>
+                                <!-- <h6>可改善什麼？</h6> -->
+                                <p>獨家手技處理臉上問題肌膚以及斑點修復，不電燒不雷射，純手工處理您臉上的異物，過程無痛且恢復期短，完美修復肌膚不留疤痕，恢復光滑肌膚。</p>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row_card">
+                <h5 class="row_card_title">水光肌煥顏療程</h5>
+                <div class="row_card_con">
+                    <div class="slider_area">
+                        <div class="slider_container">
+                            <div class="slider">
+                                <img src="./imgs/2.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/S__9519556.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/S__9568267.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/2.jpg" alt="">
+                            </div>
+                            <div class="slider">
+                                <img src="./imgs/2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="slider_left">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
+                        </div>
+                        <div class="slider_right">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                        </div>
+                    </div>
+                    <div class="row_card_area">
+                        <div class="row_card_detail">
+                            <div class="row_card_text">
+                                <h6>會做什麼？</h6>
+                                <p>✔溫和深層洗卸</p>
+                                <p>✔獨家水飛梭三段式無痛軟化角質</p>
+                                <p>✔手工針清頑固粉刺及痘痘</p>
+                                <p>✔冰鎮保濕超導水保濕面膜</p>
+                                <p>✔舒緩安敏金縷梅泥膜</p>
+                                <p>✔高效鎖水舒敏調理保養</p>
+                            </div>
+                            <div class="row_card_text">
+                                <h6>可改善什麼？</h6>
+                                <p>縮小毛孔、痘痘、黑頭、皮膚角質，過程無痛，不會傷害毛孔，可改善皮膚出油的困擾並且讓肌膚代謝恢復正常，預防毛孔粗大，深層溫和去除毛孔角質與髒污，定期保養肌膚讓皮膚深呼吸，促進肌膚水潤透亮並可幫助居家保養品的吸收。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- <section class="reserve">
+        <p>預約方式</p>
+        <div class="reserve_container">
+            <div class="reserve_text">
+                <p>加入　LINE　官方粉絲團</p>
+                <p>選擇預約時間</p>
+            </div>
+        </div>
+    </section> -->
+    <section class="transportation">
+        <h5>交通資訊</h5>
+        <div class="address">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7231.7091498804275!2d121.50975700000001!3d25.005057000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9dcbfe3a135%3A0x28c079b9d77c21c7!2zMjM05paw5YyX5biC5rC45ZKM5Y2A5L-d5bmz6LevMjA46Jmf!5e0!3m2!1szh-TW!2stw!4v1656236754250!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="address_text">
+                <p>工作室地址：</p>
+                <p>新北市永和區保平路208號3F</p>
+            </div>
+        </div>
+    </section>
+    <section class="question">
+        <ul class="qa_ul">
+            <li>如何預約？
+                <p class="grow_0">認識寂寞群眾昨日包裝檔案電子商務準備排行榜團體反覆謝謝門派，別的人物效率對方登錄持續大力，人生電源檢驗保留國際一臉先後科學高達執行環境中間日報，監控宅宅我真第一個看了給他面對部落他也學院機械興趣，協議老婆排行立刻系列優質接下來引發優秀試試市場，欣賞開通之。</p>
+            </li>
+            <li >如何保養？
+                <p class="grow_0">認識寂寞群眾昨日包裝檔案電子商務準備排行榜團體反覆謝謝門派，別的人物效率對方登錄持續大力，人生電源檢驗保留國際一臉先後科學高達執行環境中間日報，監控宅宅我真第一個看了給他面對部落他也學院機械興趣，協議老婆排行立刻系列優質接下來引發優秀試試市場，欣賞開通之。</p>
+            </li >
+            <li>若要改時間或取消預約？
+                <p class="grow_0">認識寂寞群眾昨日包裝檔案電子商務準備排行榜團體反覆謝謝門派，別的人物效率對方登錄持續大力，人生電源檢驗保留國際一臉先後科學高達執行環境中間日報，監控宅宅我真第一個看了給他面對部落他也學院機械興趣，協議老婆排行立刻系列優質接下來引發優秀試試市場，欣賞開通之。</p>
+            </li>
+        </ul>
+    </section>
+    <footer></footer>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script>
+        $(".nav-hamburger").click(function(){
+            $(".hamburger-list").toggleClass("hamburger-b")
+        })
+
+        const sliderLeft = $(".slider_left")
+        const sliderRight = $(".slider_right")
+        var imgStart = 1;
+        sliderRight.click(function(){
+            const imgCount = $(this).parent().find(".slider").length
+            const imgWidth = 100 / imgCount;
+            const imgTrain = $(this).parent().children(".slider_container")
+            imgStart++;
+            if (imgStart < 4  ){
+                imgTrain.css("transform" , `translateX( -${imgStart * imgWidth}%)`)
+                imgTrain.css("transition", `.5s`)
+                
+            } else {
+                imgStart = 0;
+                imgTrain.css("transform", `translateX(0%)`)
+                imgTrain.css("transition", `0s`)
+            }  
+        })
+        sliderLeft.click(function(){
+            const imgCount = $(this).parent().find(".slider").length
+            const imgTrain = $(this).parent().children(".slider_container")
+            const imgWidth = 100 / imgCount;
+            if (imgStart >= 1){
+                imgStart--;
+                console.log("大於0",imgStart);
+                imgTrain.css("transform" , `translateX( -${imgStart * imgWidth}%)`)
+                imgTrain.css("transition", `.5s`)
+            } 
+            else {
+                console.log("小於0",imgStart);
+                imgTrain.css("transform", `translateX( -${3 * imgWidth}%)`)
+                imgTrain.css("transition", `0s`)
+                imgStart=3;
+            }  
+        })
+        $(".service_card .class_img").hover(function(){
+            $(this).parent().children(".service_lightbox").toggleClass("service_lightbox_h ")
+            // $(this).parent().children(".service_lightbox").css("opacity","1")
+        })
+        // 
+        // $(".slider_container").one("click",function(){
+        //     let pic = $(this).parentsUntil(".service_card").find(".slider img")
+        //     let img1src = pic[1].getAttribute("src");
+        //     let img2src = pic[2].getAttribute("src");
+        //     let img3src = pic[3].getAttribute("src");
+        //     $(this).parents(".service_card").find(".img1 img").attr("src",img1src)
+        //     $(this).parents(".service_card").find(".img2 img").attr("src",img2src)
+        //     $(this).parents(".service_card").find(".img3 img").attr("src",img3src)
+        // })
+        // 
+
+        $(".slider_container").on("click",function(){
+            if ($(window).width() > 1030) {
+                $(this).parents(".service_card").children(".all_img_container").css("display","block")
+            } else {
+                return false;
+            }
+        })
+
+        // $(".slider_container").on("click",function(){
+        //     $(this).parents(".service_card").children(".all_img_container").css("display","block")
+        // })
+
+        // $(".single_img img").on("click",function(){
+        //     const clickImg = $(this).attr("src");
+        //     $(".big_img img ").css("z-index","1")
+        //     $(this).parents(".all_img_container").find(".big_img img").attr("src",clickImg)
+        // })
+
+        // $(".close").click(function(){
+        //     // $(".big_img img").css("z-index","-1")
+        //     $(this).parent().css("display","none")
+        // })
+        
+        $(window).scroll(function(){
+
+            const scrollT = $(window).scrollTop();
+            const windowH = $(window).height();
+            const bH = $('body').height();
+            console.log(scrollT);
+            if (scrollT >= 580) {
+                $('.service_card:nth-child(1)').css('transform', 'translateY(0)').css('opacity', '1').css('transition', '1.5s');
+                $('.service_card:nth-child(2)').css('transform', 'translateY(0)').css('opacity', '1').css('transition', '1.75s');
+                $('.service_card:nth-child(3)').css('transform', 'translateY(0)').css('opacity', '1').css('transition', '2s');
+            }
+            else {
+                $('.service_card:nth-child(1)').css('transform', 'translateY(400px)').css('opacity', '0').css('transition', '1.5s');
+                $('.service_card:nth-child(2)').css('transform', 'translateY(400px)').css('opacity', '0').css('transition', '1.75s');
+                $('.service_card:nth-child(3)').css('transform', 'translateY(400px)').css('opacity', '0').css('transition', '2s');
+            }
+        })
+        $(".qa_ul li").click(function(){
+            const flex_li =  $(this).children("p")
+            if (flex_li.hasClass("grow_0")){
+                console.log("add");
+                flex_li.removeClass("grow_0")
+                flex_li.addClass("grow")
+            }else {
+                console.log("remove");
+                flex_li.removeClass("grow")
+                flex_li.addClass("grow_0")
+            }
+            
+        })
+        </script>
+</body>
+</html>
