@@ -405,7 +405,7 @@
             
         }
         .grow {
-            border: 1px solid black;
+            /* border: 1px solid black; */
             border-radius: 5px;
             padding:10px 10px;
             /* transition: .5s; */
@@ -417,30 +417,37 @@
         .transportation h5 {
             text-align: center;
         }
-            @media screen and (max-width:1030px) {
-                .service_container {
-                    display: block;
-                }
-                .service_card {
-                    width: 100%;
-                    min-width: 230px;
-                    margin: auto;
-                    margin-bottom: 40px;
-                }
-                .checklist {
-                    padding: 15px 0;
-                    width: 33%;
-                    margin: auto;
-                }
-                .checklist li {
-                    padding: 0;
-                }
-                .slider img {
-                padding: 15px 0 15px;
+        .aboutme_text span {
+            text-indent: 32px;
+            display: inline-block;
+        }
+        .question {
+            background-color: #9F7A67;
+        }
+        @media screen and (max-width:1030px) {
+            .service_container {
+                display: block;
+            }
+            .service_card {
                 width: 100%;
-                max-height: 300px;
-                object-fit: contain;
-                }
+                min-width: 230px;
+                margin: auto;
+                margin-bottom: 40px;
+            }
+            .checklist {
+                padding: 15px 0;
+                width: 33%;
+                margin: auto;
+            }
+            .checklist li {
+                padding: 0;
+            }
+            .slider img {
+            padding: 15px 0 15px;
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            }
 
         }
         @media screen and (max-width:900px) {
@@ -502,12 +509,24 @@
             .slider_area {
                 width: 100%;
             }
+            .address {
+                flex-direction: column;
+                margin: auto;
+                align-items: center;
+            }
+            .address iframe {
+                margin: 30px 0;
+            }
+            nav {
+                padding: 0 20px;
+            }
+
         }
         @media screen and (max-width:700px) {
             .grow {
                 height: 140px;
             }
-            .service ,.row_service {
+            .service ,.row_service , .transportation , .question{
                 padding: 30px 25px;
             }
         }
@@ -559,7 +578,11 @@
                 <img src="./imgs/S__11567458.jpg" alt="">
             </div>
             <div class="aboutme_text">
-                <p>說出編號組合大眾討論部分我很先進性互動一家加快，彩色新竹足夠電源理由日誌注意以及我家三人解放進度，讀書先後點點一定技巧語音天堂不錯放棄，公開後面自由面前激情，有什麼，喜愛新人連接我這成為破解家裡對著這麼多，翻譯超市還沒北方自主需求碩士所屬隊伍，民族最快上。</p>
+                <p>
+                    <span>源自於Idea salon工作室，Idea salon創立迄今超過25個年頭。 我們致力於於臉上異物，包含：青春痘、肉芽、汗管瘤、斑點、坑疤，專業肌膚一對一諮詢改善肌膚，從細節找出皮膚問題的根源，讓你回到健康的皮膚狀態。</span>
+                    <br/>
+                    <span>肌膚管理的意義是讓我們皮膚真正的改善，用專業解決問題肌膚，變美這件事情無論你在什麼時候開始，重要的是開始之後不要停止。</span>
+                </p>
             </div>
         </div> 
     </section>
@@ -632,14 +655,14 @@
                     </div>
                 </div> -->
                 <p class="service_price">單堂課程 ＄3000元起</p>
-                <p class="service_price">萃斑護理 ＄3500元起</p>
+                <p class="service_price">萃斑嫩白護理 ＄3500元起</p>
             </div>
             <div class="service_card">
                 <div class="class_img">
                     <img  src="./imgs/3.jpg" alt="">
                 </div>
                 <h5 class="service_detail">
-                    <div>水光肌煥顏療程
+                    <div>蛋殼肌煥顏療程
                         <div class="text_bgc"></div>
                     </div>
                     
@@ -772,7 +795,7 @@
                 </div>
             </div>
             <div class="row_card">
-                <h5 class="row_card_title">水光肌煥顏療程</h5>
+                <h5 class="row_card_title">蛋殼肌煥顏療程</h5>
                 <div class="row_card_con">
                     <div class="slider_area">
                         <div class="slider_container">
@@ -806,16 +829,18 @@
                                 <ul>
                                     <li><img src="./imgs/icon/angles-right-solid.svg" alt="">溫和深層洗卸</li>
                                     <li><img src="./imgs/icon/angles-right-solid.svg" alt="">獨家水飛梭三段式無痛軟化角質</li>
-                                    <li><img src="./imgs/icon/angles-right-solid.svg" alt="">手工針清頑固粉刺及痘痘</li>
+                                    <li><img src="./imgs/icon/angles-right-solid.svg" alt="">手工針清頑固粉刺及痘痘以及輕微違章顆粒</li>
+                                    <li><img src="./imgs/icon/angles-right-solid.svg" alt="">專業療程操作導入膠原蛋白安瓶</li>
                                     <li><img src="./imgs/icon/angles-right-solid.svg" alt="">冰鎮保濕超導水保濕面膜</li>
-                                    <li><img src="./imgs/icon/angles-right-solid.svg" alt="">舒緩安敏金縷梅泥膜</li>
                                     <li><img src="./imgs/icon/angles-right-solid.svg" alt="">高效鎖水舒敏調理保養</li>
                                 </ul>
                             </div>
                             <div class="row_card_text">
                                 <h6>可改善什麼？</h6>
-                                <p>縮小毛孔、痘痘、黑頭、皮膚角質，過程無痛，不會傷害毛孔，可改善皮膚出油的困擾並且讓肌膚代謝恢復正常，預防毛孔粗大，深層溫和去除毛孔角質與髒污，定期保養肌膚讓皮膚深呼吸，促進肌膚水潤透亮並可幫助居家保養品的吸收。</p>
+                                <p>可改善表皮膚凹陷、痘疤、細紋、肌膚暗沉、毛孔粗大，全臉導入膠原蛋白使自體增生，份子小可深層到達真皮層細胞新生，增強屏障使肌膚回復緊緻膨彈，改善蠟黃深層黑眼圈，讓肌膚更亮白，讓肌膚緊緻度提升、膚色光澤更有感，讓肌膚擁有拋光般的蛋殼肌。</p>
+                                <div style="font-weight: 500;font-style: italic;">*水光肌煥顏療程屬於進階療程，需現場評估膚況，配合養膚品修復。</div>
                             </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -842,9 +867,16 @@
                 <p>新北市永和區保平路208號3F</p>
             </div>
         </div>
+        <!-- <div class="address_phone">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7231.7091498804275!2d121.50975700000001!3d25.005057000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9dcbfe3a135%3A0x28c079b9d77c21c7!2zMjM05paw5YyX5biC5rC45ZKM5Y2A5L-d5bmz6LevMjA46Jmf!5e0!3m2!1szh-TW!2stw!4v1656236754250!5m2!1szh-TW!2stw" width="325" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="address_text">
+                <p>工作室地址：</p>
+                <p>新北市永和區保平路208號3F</p>
+            </div>
+        </div> -->
     </section>
     <section class="question">
-        <ul class="qa_ul">
+        <ul class="qa_ul row_card ">
             <li>如何預約？
                 <p class="grow_0">認識寂寞群眾昨日包裝檔案電子商務準備排行榜團體反覆謝謝門派，別的人物效率對方登錄持續大力，人生電源檢驗保留國際一臉先後科學高達執行環境中間日報，監控宅宅我真第一個看了給他面對部落他也學院機械興趣，協議老婆排行立刻系列優質接下來引發優秀試試市場，欣賞開通之。</p>
             </li>
@@ -856,7 +888,7 @@
             </li>
         </ul>
     </section>
-    <footer></footer>
+    <footer style="height:300px"></footer>
     <script src="./js/jquery-3.6.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script>
@@ -939,7 +971,6 @@
         // })
         
         $(window).scroll(function(){
-
             const scrollT = $(window).scrollTop();
             const windowH = $(window).height();
             const bH = $('body').height();
@@ -967,6 +998,10 @@
                 flex_li.addClass("grow_0")
             }
             
+        })
+        $(window).ready(function(){
+            let trans_w =  $(".transportation").width()
+            $(".address iframe").attr("width",trans_w)
         })
         </script>
 </body>
