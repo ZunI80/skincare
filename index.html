@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cora Skin care beauty studio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <style>
         * {
@@ -45,7 +45,11 @@
         .nav-logo {
             width: 150px;
             height: 50px;
-            background-color: #fff;
+            /* background-color: #fff; */
+        }
+        .nav-logo img {
+            width: 100%;
+            height: 100%;
         }
         .nav-ul {
             display: flex;
@@ -99,7 +103,7 @@
             display: flex;
             align-items: center;
             background-color: rgba(159, 122, 103, 0.7);
-            padding: 15px 15px;
+            padding: 20px 15px;
             border-radius: 15px;
         }
         .service {
@@ -384,6 +388,7 @@
             display: flex;
             justify-content: center;
             margin: 30px;
+            flex-direction: column;
         }
         .question {
             margin-top: 50px;
@@ -393,36 +398,34 @@
             overflow: hidden;
             cursor: pointer;
         }
-        .qa_ul p {
-            transition: .7s;
-            /* border: 1px solid black; */
-            
-        }
         .grow_0{
-            /* transition: .5s; */
-            height: 0;
+
             padding: 0 10px;
+            display: none;
             
         }
-        .grow {
-            /* border: 1px solid black; */
+        /* .grow {
             border-radius: 5px;
             padding:10px 10px;
-            /* transition: .5s; */
+            transition: .5s;
             height: 100px;   
-        }
+        } */
         .transportation {
-            padding: 100px;
+            padding-top: 100px;
+            padding-bottom: 100px;
         }
-        .transportation h5 {
+        .transportation h5 , .question h5{
             text-align: center;
         }
         .aboutme_text span {
-            text-indent: 32px;
-            display: inline-block;
+            /* text-indent: 32px;
+            display: inline-block; */
         }
         .question {
             background-color: #9F7A67;
+        }
+        .qa_ul {
+            margin-top: 30px;
         }
         @media screen and (max-width:1030px) {
             .service_container {
@@ -502,7 +505,7 @@
                 object-fit: contain;
             }
             .grow {
-                height: 120px;
+                /* height: 120px; */
             }
         }
         @media screen and (max-width:768px) {
@@ -524,7 +527,7 @@
         }
         @media screen and (max-width:700px) {
             .grow {
-                height: 140px;
+                /* height: 140px; */
             }
             .service ,.row_service , .transportation , .question{
                 padding: 30px 25px;
@@ -536,7 +539,7 @@
                 align-items: center;
             }
             .grow {
-                height: 230px;
+                /* height: 230px; */
             }
             .aboutme_img {
                 width: 100%;
@@ -551,21 +554,21 @@
 <body>
     <nav>
         <div class="nav-logo">
-            <!-- <img src="" alt=""> -->
+            <img src="./imgs/logon2.jpg" alt="">
         </div>
         <ul class="nav-ul">
-            <a href="aboutme"><li>關於工作室</li></a>
+            <a href="#aboutme"><li>關於工作室</li></a>
             <a href="#service"><li>服務項目</li></a>
-            <a href=""><li>預約方式</li></a>
+            <!-- <a href=""><li>預約方式</li></a> -->
             <a href=""><li>交通資訊</li></a>
             <a href=""><li>問與答</li></a>
         </ul>
         <div class="nav-hamburger">
             <img src="./imgs/icon/bars-solid.svg" alt="">
             <ul class="hamburger-list">
-                <a href="#service"><li>關於我</li></a>
-                <a href=""><li>服務項目</li></a>
-                <a href=""><li>預約方式</li></a>
+                <a href="#aboutme"><li>關於工作室</li></a>
+                <a href="#service"><li>服務項目</li></a>
+                <!-- <a href=""><li>預約方式</li></a> -->
                 <a href=""><li>交通資訊</li></a>
                 <a href=""><li>問與答</li></a>
             </ul>
@@ -579,9 +582,14 @@
             </div>
             <div class="aboutme_text">
                 <p>
-                    <span>源自於Idea salon工作室，Idea salon創立迄今超過25個年頭。 我們致力於於臉上異物，包含：青春痘、肉芽、汗管瘤、斑點、坑疤，專業肌膚一對一諮詢改善肌膚，從細節找出皮膚問題的根源，讓你回到健康的皮膚狀態。</span>
+                    <!-- <span>源自於Idea salon工作室，Idea salon創立迄今超過25個年頭。 我們致力於於臉上異物，包含：青春痘、肉芽、汗管瘤、斑點、坑疤，專業肌膚一對一諮詢改善肌膚，從細節找出皮膚問題的根源，讓你回到健康的皮膚狀態。</span>
                     <br/>
-                    <span>肌膚管理的意義是讓我們皮膚真正的改善，用專業解決問題肌膚，變美這件事情無論你在什麼時候開始，重要的是開始之後不要停止。</span>
+                    <span>肌膚管理的意義是讓我們皮膚真正的改善，用專業解決問題肌膚，變美這件事情無論你在什麼時候開始，重要的是開始之後不要停止。</span> -->
+                    <span>我們致力於於臉上異物，包含：青春痘、肉芽、汗管瘤、斑點、坑疤，大老師創立工作室迄今超過25個年頭，擁有無數健康肌膚案例。專業肌膚一對一諮詢改善肌膚，從細節找出皮膚問題的根源，讓你回到健康的皮膚狀態。</span>
+                    <br/>
+                    <br/>
+                    <span>💡肌膚管理的意義是讓我們皮膚真正的改善，用專業解決問題肌膚，變美這件事情無論你在什麼時候開始，重要的是開始之後不要停止。
+                    </span>
                 </p>
             </div>
         </div> 
@@ -838,7 +846,7 @@
                             <div class="row_card_text">
                                 <h6>可改善什麼？</h6>
                                 <p>可改善表皮膚凹陷、痘疤、細紋、肌膚暗沉、毛孔粗大，全臉導入膠原蛋白使自體增生，份子小可深層到達真皮層細胞新生，增強屏障使肌膚回復緊緻膨彈，改善蠟黃深層黑眼圈，讓肌膚更亮白，讓肌膚緊緻度提升、膚色光澤更有感，讓肌膚擁有拋光般的蛋殼肌。</p>
-                                <div style="font-weight: 500;font-style: italic;">*水光肌煥顏療程屬於進階療程，需現場評估膚況，配合養膚品修復。</div>
+                                <div style="font-weight: 500;font-style: italic;">*蛋殼肌煥顏療程屬於進階療程，需現場評估膚況，配合養膚品修復。</div>
                             </div>
                            
                         </div>
@@ -861,10 +869,10 @@
     <section class="transportation">
         <h5>交通資訊</h5>
         <div class="address">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7231.7091498804275!2d121.50975700000001!3d25.005057000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9dcbfe3a135%3A0x28c079b9d77c21c7!2zMjM05paw5YyX5biC5rC45ZKM5Y2A5L-d5bmz6LevMjA46Jmf!5e0!3m2!1szh-TW!2stw!4v1656236754250!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9880.366878530389!2d121.53762166564893!3d25.059926765635904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abe3440e088d%3A0x9326ea4211eecb28!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDmsJHmrIrmnbHot6_kuInmrrUyMeiZnzLomZ_mqJPkuYs4!5e0!3m2!1szh-TW!2stw!4v1659251825276!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="address_text">
                 <p>工作室地址：</p>
-                <p>新北市永和區保平路208號3F</p>
+                <p>台北市中山區民權東路三段21號2樓之8</p>
             </div>
         </div>
         <!-- <div class="address_phone">
@@ -876,19 +884,30 @@
         </div> -->
     </section>
     <section class="question">
+        <h5>問與答</h5>
         <ul class="qa_ul row_card ">
             <li>如何預約？
-                <p class="grow_0">認識寂寞群眾昨日包裝檔案電子商務準備排行榜團體反覆謝謝門派，別的人物效率對方登錄持續大力，人生電源檢驗保留國際一臉先後科學高達執行環境中間日報，監控宅宅我真第一個看了給他面對部落他也學院機械興趣，協議老婆排行立刻系列優質接下來引發優秀試試市場，欣賞開通之。</p>
+                <p class="grow_0">工作室採預約制，<br>請直接私訊我Line I’d：sisi519031，<br>
+                    評估目前膚況適合的課程，放心不強迫推銷，免費諮詢客製化服務，完全單一課程，不需擔心有推銷包堂的問題。</p>
             </li>
             <li >如何保養？
-                <p class="grow_0">認識寂寞群眾昨日包裝檔案電子商務準備排行榜團體反覆謝謝門派，別的人物效率對方登錄持續大力，人生電源檢驗保留國際一臉先後科學高達執行環境中間日報，監控宅宅我真第一個看了給他面對部落他也學院機械興趣，協議老婆排行立刻系列優質接下來引發優秀試試市場，欣賞開通之。</p>
+                <p class="grow_0">皮膚更新週期會隨著年齡的增長而每個人不同，大多都是28～35天，也受著生活習慣、護膚品和其他外來因素所影響，建議定期肌膚管理課程有助於皮膚深層代謝角質及修護，歡迎免費諮詢適合課程或者保養順序。</p>
             </li >
             <li>若要改時間或取消預約？
-                <p class="grow_0">認識寂寞群眾昨日包裝檔案電子商務準備排行榜團體反覆謝謝門派，別的人物效率對方登錄持續大力，人生電源檢驗保留國際一臉先後科學高達執行環境中間日報，監控宅宅我真第一個看了給他面對部落他也學院機械興趣，協議老婆排行立刻系列優質接下來引發優秀試試市場，欣賞開通之。</p>
+                <p class="grow_0">工作室採預約制，請提要一週前預約，若時間變動主動提前告知。</p>
+            </li>
+            <li>預約注意事項
+                <p class="grow_0">
+                    ✔️諮詢肌膚狀況時，請素顏且在燈光明亮的地方用原相機拍整張臉和問題肌膚局部特寫以便評估。<br/>
+                    ✔️肌膚課程會以當天實際的膚況進行溝通，確認無疑才會開始課程調理。<br/>
+                    ✔️任何課程前五天停止用酸類及美白產品，若有雷射以及以其他侵入式手術請提前告知。<br/>
+                    ✔️工作室的保養品及課程使用的護膚產品，孕婦、敏感肌皆可使用。<br/>
+                    ✔️蛋殼肌煥膚課程&萃斑嫩白課程需搭配養膚及修復才可達到最佳的效果。<br/>
+                    ✔️任何課程前皮膚有特別狀況可以向我做諮詢。</p>
             </li>
         </ul>
     </section>
-    <footer style="height:300px"></footer>
+    <footer style="height:100px"></footer>
     <script src="./js/jquery-3.6.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script>
@@ -988,16 +1007,7 @@
         })
         $(".qa_ul li").click(function(){
             const flex_li =  $(this).children("p")
-            if (flex_li.hasClass("grow_0")){
-                console.log("add");
-                flex_li.removeClass("grow_0")
-                flex_li.addClass("grow")
-            }else {
-                console.log("remove");
-                flex_li.removeClass("grow")
-                flex_li.addClass("grow_0")
-            }
-            
+            flex_li.slideToggle(700)
         })
         $(window).ready(function(){
             let trans_w =  $(".transportation").width()
