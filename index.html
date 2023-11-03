@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-tw">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cora Skin care beauty studio</title>
+    <link rel="icon" href="./imgs/logo.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
+            font-family: 'Noto Sans TC', sans-serif;
         }
         body {
             background: #F1EDEA;
@@ -117,7 +122,7 @@
         }
         .service {
             /* background-color: #9F7A67; */
-            padding: 100px 50px;
+            padding: 150px 50px 100px;
         }
         .service_title {
             text-align: center;
@@ -572,7 +577,7 @@
             </div>
             <div class="aboutme_text">
                 <p>
-                    <span>工作室致力於手工處理臉上異物，包含：青春痘、肉芽、汗管瘤、斑點、坑疤等，工作室迄今超過25個年頭，擁有無數健康肌膚案例。專業肌膚一對一諮詢改善肌膚，從細節找出皮膚問題的根源，讓你回到健康的皮膚狀態。</span>
+                    <span>　　工作室致力於手工處理臉上異物，包含：青春痘、肉芽、汗管瘤、斑點、坑疤等，工作室迄今超過25個年頭，擁有無數健康肌膚案例。專業肌膚一對一諮詢改善肌膚，從細節找出皮膚問題的根源，讓你回到健康的皮膚狀態。</span>
                     <br/>
                     <br/>
                     <span>💡肌膚管理的意義是讓我們皮膚真正的改善，用專業解決問題肌膚，變美這件事情無論你在什麼時候開始，重要的是開始之後不要停止。
@@ -837,8 +842,8 @@
             </div>
         </div>
     </section> -->
-    <section class="transportation">
-        <h5 class="h5_name" id="transportation">交通資訊</h5>
+    <section class="transportation" id="transportation">
+        <h5 class="h5_name" >交通資訊</h5>
         <div class="address">
             <div class="address_text">
                 <div class="service_card" style="width: 100%;">
@@ -867,8 +872,8 @@
             </div>
         </div> -->
     </section>
-    <section class="question">
-        <h5 class="h5_name" id="question">問與答</h5>
+    <section class="question" id="question">
+        <h5 class="h5_name">問與答</h5>
         <ul class="qa_ul row_card ">
             <li><span style="font-weight: 700;">如何預約？</span> 
                 <p class="grow_0">工作室採預約制，<br>請直接私訊官方LINE:@094acthi<br>
@@ -977,13 +982,13 @@
         window.onload = function(){
             var trans_w = document.querySelector(".transportation .address").offsetWidth;
             var map = document.querySelector(".address iframe");
-            map.setAttribute("width",trans_w);
+            //map.setAttribute("width",trans_w);
         }
         window.onresize = function(){
             var trans_w = document.querySelector(".transportation .address").offsetWidth;
             var map = document.querySelector(".address iframe");
-            map.setAttribute("width",trans_w);
-            console.log(trans_w)
+            //map.setAttribute("width",trans_w);
+            //console.log(trans_w)
         }
         </script>
 </body>
